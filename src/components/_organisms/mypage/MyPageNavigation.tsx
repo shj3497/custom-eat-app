@@ -10,13 +10,30 @@ import MyPageScreen from '@screens/mypage/MyPageScreen';
 import NoticeScreen from '@screens/mypage/NoticeScreen';
 import React from 'react';
 import {PageKey} from '../RootNavigation';
+import NoticeDetailScreen from '@screens/mypage/NoticeDetailScreen';
 
 export type MyPageStackParamKey = Extract<
   PageKey,
-  'default' | 'deliveryInfo' | 'introduction' | 'notice' | 'faq' | 'inquiry'
+  | 'default'
+  | 'deliveryInfo'
+  | 'introduction'
+  | 'notice'
+  | 'noticeDetail'
+  | 'faq'
+  | 'inquiry'
 >;
 
-export type MyPageStackParamList = Record<MyPageStackParamKey, undefined>;
+export type MyPageStackParamList = {
+  default: undefined;
+  deliveryInfo: undefined;
+  introduction: undefined;
+  notice: undefined;
+  noticeDetail: {
+    id: number | string;
+  };
+  faq: undefined;
+  inquiry: undefined;
+};
 
 export type MyPageStackNavigation = StackNavigationProp<MyPageStackParamList>;
 
@@ -58,13 +75,13 @@ const MyPageNavigation = () => {
           headerTitle: '공지사항',
         }}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="noticeDetail"
-        component={NoticeScreen}
+        component={NoticeDetailScreen}
         options={{
           headerTitle: '공지사항',
         }}
-      /> */}
+      />
       <Stack.Screen
         name="faq"
         component={FaqScreen}

@@ -4,6 +4,7 @@ import {View} from 'react-native';
 import {PaperProvider} from 'react-native-paper';
 import RootNavigation from '@components/_organisms/RootNavigation';
 import {NavigationContainer} from '@react-navigation/native';
+import React from 'react';
 
 const App = () => {
   return (

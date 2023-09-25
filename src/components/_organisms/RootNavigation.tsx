@@ -5,11 +5,11 @@ import {
 import BottomNavigation from './BottomNavigation';
 import LoginScreen from '@screens/LoginScreen';
 import {ArrowRightIosIcon} from '@components/icons';
+import React from 'react';
 
 export type PageKey =
   | 'main'
   | 'login'
-  | 'mypage'
   | 'deliveryInfo'
   | 'default'
   | 'introduction'
@@ -42,9 +42,7 @@ const RootNavigation = () => {
           name="login"
           component={LoginScreen}
           options={{
-            headerShown: true,
-            headerTitle: '로그인',
-            headerBackTitleVisible: false,
+            headerShown: false,
           }}
         />
       </RootStack.Group>
