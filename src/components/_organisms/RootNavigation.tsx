@@ -4,18 +4,21 @@ import {
 } from '@react-navigation/stack';
 import BottomNavigation from './BottomNavigation';
 import LoginScreen from '@screens/LoginScreen';
+import {ArrowRightIosIcon} from '@components/icons';
 
 export type PageKey =
   | 'main'
   | 'login'
+  | 'mypage'
   | 'deliveryInfo'
   | 'default'
   | 'introduction'
   | 'notice'
+  | 'noticeDetail'
   | 'faq'
   | 'inquiry';
 
-type RootParamKey = Extract<PageKey, 'main' | 'login'>;
+type RootParamKey = Extract<PageKey, 'main' | 'login' | 'home'>;
 type RootStackParamList = Record<RootParamKey, undefined>;
 type RootStackNavigation = StackNavigationProp<RootStackParamList>;
 
@@ -39,7 +42,9 @@ const RootNavigation = () => {
           name="login"
           component={LoginScreen}
           options={{
-            headerShown: false,
+            headerShown: true,
+            headerTitle: '로그인',
+            headerBackTitleVisible: false,
           }}
         />
       </RootStack.Group>

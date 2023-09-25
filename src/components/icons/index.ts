@@ -1,5 +1,11 @@
+export {default as AppleIcon} from './AppleIcon';
+export {default as ArrowRightIosIcon} from './ArrowRightIosIcon';
+export {default as FacebookIcon} from './FacebookIcon';
+export {default as GoogleIcon} from './GoogleIcon';
 export {default as HomeIcon} from './HomeIcon';
+export {default as KakaoIcon} from './KakaoIcon';
 export {default as MagazineIcon} from './MagazineIcon';
 export {default as MyPageIcon} from './MyPageIcon';
+export {default as NaverIcon} from './NaverIcon';
 export {default as ReviewIcon} from './ReviewIcon';
 export {default as SearchIcon} from './SearchIcon';

@@ -13,7 +13,7 @@ import {PageKey} from '../RootNavigation';
 
 export type MyPageStackParamKey = Extract<
   PageKey,
-  'deliveryInfo' | 'default' | 'introduction' | 'notice' | 'faq' | 'inquiry'
+  'default' | 'deliveryInfo' | 'introduction' | 'notice' | 'faq' | 'inquiry'
 >;
 
 export type MyPageStackParamList = Record<MyPageStackParamKey, undefined>;
@@ -58,6 +58,13 @@ const MyPageNavigation = () => {
           headerTitle: '공지사항',
         }}
       />
+      {/* <Stack.Screen
+        name="noticeDetail"
+        component={NoticeScreen}
+        options={{
+          headerTitle: '공지사항',
+        }}
+      /> */}
       <Stack.Screen
         name="faq"
         component={FaqScreen}
