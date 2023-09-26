@@ -4,8 +4,6 @@ import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
 import {Text} from 'react-native';
 
-interface NoticeDetailScreenProps {}
-
 type Props = StackScreenProps<MyPageStackParamList, 'noticeDetail'>;
 
 const Container = styled.View`

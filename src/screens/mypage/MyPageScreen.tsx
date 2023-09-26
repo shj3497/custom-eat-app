@@ -1,15 +1,18 @@
 import {PageNavigation} from '@components/_organisms/RootNavigation';
 import ListItemButton from '@components/_organisms/mypage/ListItemButton';
 import {
-  MyPageStackNavigation,
   MyPageStackParamKey,
+  MyPageStackParamList,
 } from '@components/_organisms/mypage/MyPageNavigation';
 import ArrowRightIosIcon from '@components/icons/ArrowRightIosIcon';
 import styled, {css} from '@emotion/native';
 import {useNavigation} from '@react-navigation/native';
-import React, {ReactNode} from 'react';
+import {StackScreenProps} from '@react-navigation/stack';
+import React, {FC, ReactNode} from 'react';
 import {StyleSheet} from 'react-native';
 import {Button} from 'react-native-paper';
+
+type Props = StackScreenProps<MyPageStackParamList, 'default'>;
 
 const Container = styled.View`
   display: flex;
@@ -126,7 +129,7 @@ const buttonList: ButtonData[] = [
   },
 ];
 
-const MyPageScreen = (props: any) => {
+const MyPageScreen: FC<Props> = ({route}) => {
   const navigation = useNavigation<PageNavigation>();
 
   const handlePress = (name: MyPageStackParamKey) => {
@@ -161,7 +164,9 @@ const MyPageScreen = (props: any) => {
       <Button
         {...whiteButtonStyle}
         icon={() => <ArrowRightIosIcon width={20} height={20} />}
-        onPress={() => {}}
+        onPress={() => {
+          navigation.navigate('help');
+        }}
       >
         고객센터 도움이 필요하신가요?
       </Button>

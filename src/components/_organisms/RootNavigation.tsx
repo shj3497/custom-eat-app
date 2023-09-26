@@ -16,7 +16,9 @@ export type PageKey =
   | 'notice'
   | 'noticeDetail'
   | 'faq'
-  | 'inquiry';
+  | 'inquiry'
+  | 'help'
+  | 'csAskCreate';
 
 type RootParamKey = Extract<PageKey, 'main' | 'login' | 'home'>;
 type RootStackParamList = Record<RootParamKey, undefined>;
