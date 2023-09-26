@@ -81,11 +81,14 @@ const AskNoticeDialog: FC<Props> = ({open, onClose}) => {
         <DialogContent>
           <NoticeView>
             <Text style={styles.title}>1:1 문의 작성 전 확인해주세요!</Text>
-            {askNoticeData.map((data) => (
-              <View style={{rowGap: 10}}>
+            {askNoticeData.map((data, index) => (
+              <View key={index} style={{rowGap: 10}}>
                 <Text style={styles.subTitle}>{data.subTitle}</Text>
-                {data.notices.map((notice) => (
-                  <View style={{flexDirection: 'row', columnGap: 4}}>
+                {data.notices.map((notice, index) => (
+                  <View
+                    key={index}
+                    style={{flexDirection: 'row', columnGap: 4}}
+                  >
                     <Text style={styles.text}>-</Text>
                     <Text
                       style={{
