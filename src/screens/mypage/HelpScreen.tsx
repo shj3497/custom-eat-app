@@ -1,3 +1,4 @@
+import KakaoHelpButton from '@components/_atoms/KakaoHelpButton';
 import {MyPageStackParamList} from '@components/_organisms/mypage/MyPageNavigation';
 import {KakaoIcon} from '@components/icons';
 import styled from '@emotion/native';
@@ -37,15 +38,6 @@ const styles = StyleSheet.create({
   kakaoHelp: {
     width: '100%',
     marginTop: 40,
-  },
-  kakaoHelpBtn: {
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#FFEA0F',
-    height: 52,
-    marginTop: 10,
   },
   oneOnOneHelp: {
     width: '100%',
@@ -106,18 +98,7 @@ const HelpScreen: FC<Props> = ({navigation, route}) => {
           </Text>
         </View>
         <TouchableOpacity activeOpacity={0.8} onPress={() => {}}>
-          <View style={styles.kakaoHelpBtn}>
-            <KakaoIcon width={40} height={40} />
-            <Text
-              style={{
-                color: '#3C1E1E',
-                fontWeight: '700',
-                fontSize: 15,
-              }}
-            >
-              카카오톡 문의
-            </Text>
-          </View>
+          <KakaoHelpButton />
         </TouchableOpacity>
       </View>
 
@@ -131,10 +112,15 @@ const HelpScreen: FC<Props> = ({navigation, route}) => {
             }}
           >
             <View style={{...styles.helpBtn, backgroundColor: '#000'}}>
-              <Text style={styles.helpBtnText}>1:1문의 작성</Text>
+              <Text style={styles.helpBtnText}>1:1 문의 작성</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.8} onPress={() => {}}>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => {
+              navigation.navigate('csAskList');
+            }}
+          >
             <View style={{...styles.helpBtn, backgroundColor: '#fff'}}>
               <Text style={{...styles.helpBtnText, color: '#000'}}>
                 나의 1:1 문의 / 답변 확인

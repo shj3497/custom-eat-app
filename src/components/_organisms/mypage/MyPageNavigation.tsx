@@ -13,6 +13,7 @@ import {PageKey} from '../RootNavigation';
 import NoticeDetailScreen from '@screens/mypage/NoticeDetailScreen';
 import HelpScreen from '@screens/mypage/HelpScreen';
 import CsAskCreateScreen from '@screens/mypage/CsAskCreateScreen';
+import CsAskListScreen from '@screens/mypage/CsAskListScreen';
 
 export type MyPageStackParamKey = Extract<
   PageKey,
@@ -25,6 +26,7 @@ export type MyPageStackParamKey = Extract<
   | 'inquiry'
   | 'help'
   | 'csAskCreate'
+  | 'csAskList'
 >;
 
 export type MyPageStackParamList = {
@@ -39,6 +41,7 @@ export type MyPageStackParamList = {
   inquiry: undefined;
   help: undefined;
   csAskCreate: undefined;
+  csAskList: undefined;
 };
 
 export type MyPageStackNavigation = StackNavigationProp<MyPageStackParamList>;
@@ -114,6 +117,13 @@ const MyPageNavigation = () => {
         component={CsAskCreateScreen}
         options={{
           headerTitle: '1:1 문의 작성',
+        }}
+      />
+      <Stack.Screen
+        name="csAskList"
+        component={CsAskListScreen}
+        options={{
+          headerTitle: '나의 1:1 문의',
         }}
       />
     </Stack.Navigator>

@@ -18,9 +18,10 @@ export type PageKey =
   | 'faq'
   | 'inquiry'
   | 'help'
-  | 'csAskCreate';
+  | 'csAskCreate'
+  | 'csAskList';
 
-type RootParamKey = Extract<PageKey, 'main' | 'login' | 'home'>;
+type RootParamKey = Extract<PageKey, 'main' | 'login'>;
 type RootStackParamList = Record<RootParamKey, undefined>;
 type RootStackNavigation = StackNavigationProp<RootStackParamList>;
 
